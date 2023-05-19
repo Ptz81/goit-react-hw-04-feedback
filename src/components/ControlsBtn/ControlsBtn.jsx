@@ -1,10 +1,11 @@
 import css from '../Feedback.module.css'
 import PropTypes from 'prop-types'
 
-const ControlsBtn = ({data, increment}) => {
+const ControlsBtn = ({ valueRate, increment }) => {
+   const options = Object.keys(valueRate);
   return (
     <div>
-      {data.map(item => {
+      {options.map(item => {
         return (
           <button
             type="button"
@@ -18,7 +19,7 @@ const ControlsBtn = ({data, increment}) => {
   );
 }
 ControlsBtn.propTypes = {
-data: PropTypes.array.isRequired,
+valueRate: PropTypes.object.isRequired,
 increment: PropTypes.func.isRequired,
 }
 export default ControlsBtn
